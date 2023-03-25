@@ -29,10 +29,12 @@ jobs:
     - name: Build Docker Image
       run: |
          docker build --tag gperez991/docker-grapql:0.0.2 .
+         docker build --tag gperez991/docker-grapql:latest .
 
     - name: Push Docker Image
       run: |
          docker push gperez991/docker-grapql:0.0.2
+         docker push gperez991/docker-grapql:latest
       
       
         
