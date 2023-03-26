@@ -38,7 +38,7 @@ jobs:
         
     - name: Build Docker Image
       env:
-         $NEW_VERSION: ${{ steps.version.outputs.version }}
+         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
          echo "New version: $NEW_VERSION!!!!!!!!!!"
          docker build --tag gperez991/docker-grapql:$NEW_VERSION .
@@ -46,7 +46,7 @@ jobs:
 
     - name: Push Docker Image
       env:
-         $NEW_VERSION: ${{ steps.version.outputs.version }}
+         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
          docker push gperez991/docker-grapql:$NEW_VERSION
          docker push gperez991/docker-grapql:latest
